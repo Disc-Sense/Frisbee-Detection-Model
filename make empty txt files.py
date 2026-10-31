@@ -5,7 +5,7 @@ import os
 # Configuration
 base_directory = os.path.dirname(os.path.abspath(__file__))
 
-test_train_or_val = "train"
+test_train_or_val = "val"
 
 image_directory = os.path.join(base_directory, "data", "images", test_train_or_val)
 txt_directory = os.path.join(base_directory, "data", "labels", test_train_or_val)
