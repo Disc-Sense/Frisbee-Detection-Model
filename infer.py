@@ -1,4 +1,17 @@
-﻿args = p.parse_args()
+﻿from pathlib import Path
+import argparse
+import csv
+import time
+import cv2
+import torch
+from ultralytics import YOLO
+
+p = argparse.ArgumentParser()
+p.add_argument("video", help="Path to a whole unseen MP4 game")
+p.add_argument("--every", type=int, default=1,
+               help="Process every Nth frame; 1 processes every frame")
+p.add_argument("--conf", type=float, default=0.10)
+args = p.parse_args()
 if args.every < 1:
     raise SystemExit("--every must be at least 1")
 

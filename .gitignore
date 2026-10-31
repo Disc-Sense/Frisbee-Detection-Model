@@ -1,0 +1,26 @@
+# Python virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Raw data and extracted datasets
+games/
+data/
+Renaming Folder/
+
+# Generated YOLO configuration
+data.yaml
+
+# Ignore training outputs except the model used by the scripts
+/runs/*
+!/runs/detect/
+/runs/detect/*
+!/runs/detect/disc5d/
+/runs/detect/disc5d/*
+!/runs/detect/disc5d/weights/
+/runs/detect/disc5d/weights/*
+!/runs/detect/disc5d/weights/best.pt
+
+# Inference outputs
+review.mp4
+detections.csv

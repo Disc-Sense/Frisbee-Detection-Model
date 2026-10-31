@@ -25,12 +25,12 @@ if args.action == "train":
     model = YOLO("yolo11n.pt")  # Downloads pretrained weights on first use.
     model.train(data="data.yaml", imgsz=640, epochs=args.epochs,
                 batch=args.batch, workers=0, device=device,
-                project="runs/detect", name="disc5d", exist_ok=True)
+                project=str(Path("runs/detect").resolve()), name="disc5d", exist_ok=True)
 else:
     weights = Path("runs/detect/disc5d/weights/best.pt")
     if not weights.exists():
         raise SystemExit(f"Missing trained weights: {weights}")
     model = YOLO(str(weights))
     model.val(data="data.yaml", split="test", imgsz=640,
-              device=device, project="runs/test", name="heldout",
+              device=device, project=str(Path("runs/test").resolve()), name="heldout",
               exist_ok=True)
