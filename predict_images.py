@@ -4,7 +4,7 @@ model = YOLO("runs/detect/disc5d/weights/best.pt")
 model.predict(
     source="data/images/test",
     imgsz=640,
-    conf=0.10,
+    conf=0.13,
     save=True,
     project="runs/review",
     name="test_images",

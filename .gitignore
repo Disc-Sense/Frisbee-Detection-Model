@@ -21,6 +21,11 @@ data.yaml
 /runs/detect/disc5d/weights/*
 !/runs/detect/disc5d/weights/best.pt
 
+# Keep held-out test evaluation results under version control
+!/runs/test/
+!/runs/test/heldout/
+!/runs/test/heldout/**
+
 # Inference outputs
 review.mp4
 detections.csv
