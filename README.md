@@ -130,3 +130,8 @@ data.yaml
 runs/
 review.mp4
 detections.csv
+```
+
+# Documented Bugs
+
+The model's accuracy is not up to par when the frisbee is being held and often recognizes glare from the sun as a frisbee.
